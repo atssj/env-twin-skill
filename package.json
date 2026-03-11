@@ -18,7 +18,7 @@
     "node": ">=18.0.0"
   },
   "bin": {
-    "env-twin-mcp": "./dist/mcp-server.js"
+    "env-twin-mcp": "./dist/mcp-server/index.js"
   },
   "agents": {
     "skills": [
@@ -27,9 +27,9 @@
   },
   "scripts": {
     "build": "tsc -p .",
-    "start": "node ./dist/mcp-server.js",
+    "start": "node ./dist/mcp-server/index.js",
     "dev": "ts-node ./mcp-server/index.ts",
-    "inspect": "npx @modelcontextprotocol/inspector node ./dist/mcp-server.js",
+    "inspect": "npx @modelcontextprotocol/inspector node ./dist/mcp-server/index.js",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

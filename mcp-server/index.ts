@@ -426,6 +426,14 @@ function startServer() {
       }
     }
   });
+
+  process.stdin.on("error", (error: unknown) => {
+    const message =
+      error instanceof Error ? error.message : "Unknown stdin error";
+    // eslint-disable-next-line no-console
+    console.error("env-twin MCP server stdin error:", message);
+    process.exit(1);
+  });
 }
 
 if (process.argv[1] && import.meta.url === `file://${process.argv[1]}`) {
