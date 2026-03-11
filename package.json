@@ -1,0 +1,44 @@
+{
+  "name": "env-twin-skill",
+  "version": "1.0.0",
+  "description": "Agent skill package and MCP server for managing environment variables with env-twin across single and monorepo projects.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "env-twin",
+    "agent-skill",
+    "mcp-server",
+    "environment-variables",
+    "monorepo",
+    "cursor",
+    "claude",
+    "ai-assistant"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "env-twin-mcp": "./dist/mcp-server.js"
+  },
+  "agents": {
+    "skills": [
+      "./skills/env-twin"
+    ]
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node ./dist/mcp-server.js",
+    "dev": "ts-node ./mcp-server/index.ts",
+    "inspect": "npx @modelcontextprotocol/inspector node ./dist/mcp-server.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
+  }
+}
