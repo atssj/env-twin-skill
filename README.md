@@ -27,10 +27,10 @@ npx env-twin-mcp
 ```
 
 Clients connect over stdio and can call tools:
-- `sync_env`
-- `restore_env`
-- `clean_backups`
-- `check_sync`
+- `sync_env`: Sync `.env` keys to `.env.example` (Supports `source`, `dest`, `noBackup`, `dryRun` parameters).
+- `restore_env`: Restore an environment file from a backup timestamp (Supports `timestamp`, `target`, `yes` parameters).
+- `clean_backups`: Remove older backup files (Supports `keep`, `all` parameters).
+- `check_sync`: Run a sync dry-run to check for missing keys (Supports `source`, `dest` parameters).
 
 ### Development
 
