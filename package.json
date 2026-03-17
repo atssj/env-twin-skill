@@ -1,18 +1,25 @@
 {
   "name": "env-twin-skill",
   "version": "1.0.0",
-  "description": "Agent skill package and MCP server for managing environment variables with env-twin across single and monorepo projects.",
+  "description": "Powerful MCP server and AI agent skill for synchronizing, managing, and templating environment variables (.env) across single and monorepo projects.",
   "type": "module",
   "license": "MIT",
   "keywords": [
-    "env-twin",
-    "agent-skill",
+    "env",
     "mcp-server",
-    "environment-variables",
+    "ai-assistant",
     "monorepo",
+    "dotenv",
     "cursor",
+    "mcp",
+    "environment-variables",
+    "sync",
+    "llm",
+    "agent-skill",
+    "ai-agent",
     "claude",
-    "ai-assistant"
+    "configuration-management",
+    "env-twin"
   ],
   "engines": {
     "node": ">=18.0.0"
