@@ -42,10 +42,12 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
+    "cross-spawn": "^7.0.6",
     "zod": "^3.24.0",
     "zod-to-json-schema": "^3.25.1"
   },
   "devDependencies": {
+    "@types/cross-spawn": "^6.0.6",
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.0.0",
