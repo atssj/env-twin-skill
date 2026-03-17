@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { spawn } from "node:child_process";
+import spawn from "cross-spawn";
 import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 
@@ -82,19 +82,22 @@ function runEnvTwin(args: string[]): Promise<{ stdout: string; stderr: string; c
     const spawnArgs = isLocal ? args : ["env-twin", ...args];
     const child = spawn(cmd, spawnArgs, {
       stdio: ["ignore", "pipe", "pipe"],
-      shell: process.platform === "win32",
     });
 
     let stdout = "";
     let stderr = "";
 
-    child.stdout.on("data", (data) => {
-      stdout += data.toString();
-    });
+    if (child.stdout) {
+      child.stdout.on("data", (data) => {
+        stdout += data.toString();
+      });
+    }
 
-    child.stderr.on("data", (data) => {
-      stderr += data.toString();
-    });
+    if (child.stderr) {
+      child.stderr.on("data", (data) => {
+        stderr += data.toString();
+      });
+    }
 
     child.on("error", (error) => {
       reject(error);
