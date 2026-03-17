@@ -37,15 +37,18 @@
     "start": "node ./dist/mcp-server/index.js",
     "dev": "ts-node ./mcp-server/index.ts",
     "inspect": "npx @modelcontextprotocol/inspector node ./dist/mcp-server/index.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test": "vitest run"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.1",
-    "zod": "^3.24.0"
+    "zod": "^3.24.0",
+    "zod-to-json-schema": "^3.25.1"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vitest": "^4.1.0"
   }
 }
